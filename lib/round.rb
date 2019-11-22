@@ -1,23 +1,24 @@
 class Round
   attr_accessor :deck
-
   def initialize(deck)
     @deck = deck
   end
 
-  def current_card
-    p current = deck.cards[0]
-
-  end
-
-  def take_turn(name)
-    if name == "Juneau"
-      p deck.cards[0]
-    end
-  end
-
   def turns
     turns_taken = []
+  end
+
+  def current_card
+    deck.cards[0]
+  end
+
+  def take_turn(guess)
+    current_card = deck.cards[0]
+    p deck.cards[0].question
+
+    guess = gets.chomp
+    #### turns_taken < deck.cards[0]
+    current_turn = Turn.new(guess, current_card)
   end
 
   def number_correct
