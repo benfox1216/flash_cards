@@ -15,6 +15,8 @@ class RoundTest < Minitest::Test
     @deck = Deck.new([@card1, @card2, @card3])
 
     @round = Round.new(@deck)
+
+    @new_turn = @round.take_turn("Juneau")
   end
 
   def test_it_exists
