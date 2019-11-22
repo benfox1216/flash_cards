@@ -6,9 +6,18 @@ class Round
   end
 
   def current_card
+    p current = deck.cards[0]
+
   end
 
-  def take_turn
+  def take_turn(name)
+    if name == "Juneau"
+      p deck.cards[0]
+    end
+  end
+
+  def turns
+    turns_taken = []
   end
 
   def number_correct
