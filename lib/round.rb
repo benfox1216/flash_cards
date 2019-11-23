@@ -1,6 +1,6 @@
 class Round
   attr_accessor :deck, :turns, :number_correct, :correct_cards, :total_guesses,
-    :correct_by_category, :total_guesses_by_category
+    :total_guesses_by_category
 
   def initialize(deck)
     @deck = deck
@@ -8,7 +8,6 @@ class Round
     @number_correct = 0
     @correct_cards = []
     @total_guesses = 0
-    @correct_by_category = 0
     @total_guesses_by_category = 0
   end
 
@@ -33,13 +32,14 @@ class Round
   end
 
   def number_correct_by_category(category)
+      correct_by_category = 0
       @correct_cards.each do |turn|
         if category == turn.card.category
-          @correct_by_category += 1
+          correct_by_category += 1
         end
       end
 
-    return @correct_by_category
+    return correct_by_category
   end
 
   def percent_correct
