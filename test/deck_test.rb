@@ -25,6 +25,10 @@ class DeckTest < Minitest::Test
     assert_equal [@card1, @card2, @card3], @deck.cards
   end
 
+  def test_it_counts_turns
+    assert_equal 3, @deck.count
+  end
+
   def test_it_returns_cards_in_category
     assert_equal [@card2, @card3], @deck.cards_in_category(:STEM)
   end

@@ -15,34 +15,44 @@ class RoundTest < Minitest::Test
     @deck = Deck.new([@card1, @card2, @card3])
 
     @round = Round.new(@deck)
-
-    @new_turn = @round.take_turn("Juneau")
   end
 
   def test_it_exists
+    assert_instance_of Round, @round
   end
 
   def test_it_has_a_deck
+    assert_equal @deck, @round.deck
   end
 
-  def test_current_card
+  def test_it_records_turns_taken
+    assert_equal [], @round.turns
   end
 
-  def test_taking_a_turn
+# This test is not running
+  def it_records_number_of_correct_guesses
+    assert_equal 0, @round.number_correct
   end
 
-  def test_number_of_turns
+  def test_it_records_cards_with_correct_answers
+    assert_equal [], @round.correct_cards
   end
 
-  def test_number_correct
+  def test_it_records_total_guesses
+    assert_equal 0, @round.total_guesses
   end
 
-  def number_correct_by_category
+  def test_it_records_total_guesses_by_category
+    assert_equal 0, @round.total_guesses_by_category
   end
 
-  def percent_correct
+# This test is not running
+  def it_records_current_card
+    assert_equal ["What is the capital of Alaska?", "Juneau", :Geography],
+      @round.current_card
   end
 
   def percent_correct_by_category
+
   end
 end
