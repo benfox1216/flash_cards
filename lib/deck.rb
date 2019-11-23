@@ -5,14 +5,25 @@ class Deck
     @cards = cards
   end
 
-  def cards_in_category(card_category)
-    cards_specified = []
+  def count
+    number_in_deck = 0
+
     cards.each do |card|
-      if card_category == card.category
-        cards_specified << card
+      number_in_deck += 1
+    end
+
+    return  number_in_deck
+  end
+
+  def cards_in_category(given_category)
+    cards_in_category = []
+
+    cards.each do |card|
+      if given_category == card.category
+        cards_in_category << card
       end
     end
 
-    p cards_specified
+    return cards_in_category
   end
 end
