@@ -52,7 +52,7 @@ class RoundTest < Minitest::Test
       @round.current_card
   end
 
-  def percent_correct_by_category
-
+  def test_it_processes_taking_a_turn
+    assert_equal @current_turn, @round.take_turn("Juneau")
   end
 end
