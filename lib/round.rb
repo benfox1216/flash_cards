@@ -1,11 +1,9 @@
 class Round
-  attr_accessor :deck
+  attr_accessor :deck, :turns, :number_correct
   def initialize(deck)
     @deck = deck
-  end
-
-  def turns
-    turns_taken = []
+    @turns = []
+    @number_correct = 0
   end
 
   def current_card
@@ -14,14 +12,15 @@ class Round
 
   def take_turn(guess)
     current_card = deck.cards[0]
-    p deck.cards[0].question
 
-    guess = gets.chomp
-    #### turns_taken < deck.cards[0]
+    if guess == deck.cards[0].answer
+      @number_correct += 1
+    end
+
     current_turn = Turn.new(guess, current_card)
-  end
+    @turns << current_card
 
-  def number_correct
+    deck.cards.shift
   end
 
   def number_correct_by_category
