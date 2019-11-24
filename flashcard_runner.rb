@@ -12,15 +12,15 @@ card4 = Card.new("What cardboard cutout lives at Turing?", "Justin Beiber",
 cards = [card1, card2, card3, card4]
 
 @deck = Deck.new(cards)
-
 @card_number = 1
 
-puts "Welcome! You're playing with 4 cards."
+puts "Welcome! You're playing with #{cards.length} cards."
 puts "-------------------------------------------------"
 
 def play_game
+
   puts "This is card number #{@card_number} out of 4."
-  puts @deck.cards[@card_number - 1].question
+  puts @deck.cards[0].question
 
   round = Round.new(@deck)
 
@@ -29,9 +29,8 @@ def play_game
   turn = round.take_turn(guess)
 
   puts turn.feedback
+
+  @card_number += 1
 end
 
-play_game
-play_game
-play_game
-play_game
+cards.length.times {play_game}
