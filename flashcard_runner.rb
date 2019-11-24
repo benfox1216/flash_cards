@@ -20,7 +20,7 @@ puts "-------------------------------------------------"
 puts "This is card number 1 out of 4."
 puts deck.cards[0].question
 
-gets.chomp guess = ""
+guess = gets.chomp
 
 turn1 = round1.take_turn(guess)
 

@@ -11,7 +11,7 @@ class Turn
   end
 
   def feedback
-    if guess == true
+    if correct? == true
       "Correct!"
     else
       "Incorrect."
