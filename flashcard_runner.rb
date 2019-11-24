@@ -13,14 +13,14 @@ cards = [card1, card2, card3, card4]
 
 @deck = Deck.new(cards)
 
+@card_number = 1
+
 puts "Welcome! You're playing with 4 cards."
 puts "-------------------------------------------------"
 
 def play_game
-  card_number = 1
-
-  puts "This is card number #{card_number} out of 4."
-  puts @deck.cards[card_number - 1].question
+  puts "This is card number #{@card_number} out of 4."
+  puts @deck.cards[@card_number - 1].question
 
   round = Round.new(@deck)
 
