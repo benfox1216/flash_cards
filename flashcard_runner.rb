@@ -4,6 +4,7 @@ require './lib/deck'
 require './lib/turn'
 require './lib/card_generator'
 
+# KEEPING LINES 8-14 AS COMMENTS TO SHOW CODE BEFORE ITERATION 4
 # card1 = Card.new("What is 5 + 5?", "10", :STEM)
 # card2 = Card.new("What is Rachel's favorite animal?", "Cat", :"Turing Staff")
 # card3 = Card.new("What is Mike's middle name?", "nobody knows", :"Turing Staff")
@@ -19,6 +20,7 @@ cards = CardGenerator.new(filename).cards
 @round = Round.new(@deck)
 
 card_count = cards.length
+
 @card_number = 1
 
 puts "Welcome! You're playing with #{card_count} cards."
@@ -36,15 +38,14 @@ def play_game
   puts turn.feedback
 
   @card_number += 1
+
 end
 
 cards.length.times {play_game}
 
+
 puts "****** Game over! ******"
-puts "You had #{@round.number_correct} correct guesses out of #{card_count} for
-  a total score of #{@round.percent_correct.to_i}%."
+puts "You had #{@round.number_correct} correct guesses out of #{card_count} for a total score of #{@round.percent_correct.to_i}%."
 puts "STEM - #{@round.percent_correct_by_category("STEM").to_i}% correct"
-puts "Turing Staff - #{@round.percent_correct_by_category("Turing Staff").to_i}
-  % correct"
-puts "Pop Culture - #{@round.percent_correct_by_category("Pop Culture").to_i}%
-  correct"
+puts "Turing Staff - #{@round.percent_correct_by_category("Turing Staff").to_i} % correct"
+puts "Pop Culture - #{@round.percent_correct_by_category("Pop Culture").to_i}% correct"

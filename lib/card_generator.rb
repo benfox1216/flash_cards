@@ -12,10 +12,11 @@ class CardGenerator
 
     File.open("./lib/#{@text_file}").each do |line|
       card = line.split(",")
-      new_card = Card.new(card[0], card[1], card[2])
+
+      new_card = Card.new(card[0], card[1], card[2].chop)
       cards_from_file << new_card
     end
 
-  return cards_from_file
+    return cards_from_file
   end
 end

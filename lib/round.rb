@@ -10,7 +10,7 @@ class Round
   end
 
   def current_card
-    current_card = deck.cards[0]
+    current_card = @deck.cards[0]
     return current_card
   end
 
@@ -24,7 +24,7 @@ class Round
       @correct_cards << current_turn.card
     end
 
-    deck.cards.shift
+    @deck.cards.shift
 
     return current_turn
   end
