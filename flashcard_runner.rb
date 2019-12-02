@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require './lib/round'
 require './lib/card'
 require './lib/deck'
